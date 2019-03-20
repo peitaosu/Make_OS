@@ -30,3 +30,7 @@ kernel.iso: kernel.bin
 	echo '}' >> iso/boot/grub/grub.cfg
 	grub-mkrescue --output=$@ iso
 	rm -rf iso
+
+.PHONY: clean
+clean:
+	rm -f $(objects) kernel.bin kernel.iso
